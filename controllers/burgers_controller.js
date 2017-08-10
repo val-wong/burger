@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
-var cat = require("../models/burger.js");
+var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
@@ -18,9 +18,9 @@ router.get("/", function(req, res) {
 
 router.post("/", function(req, res) {
   burger.create([
-    "burger_name", "Munchin"
+    "burger_name", "devoured"
   ], [
-    req.body.burger_name, req.body.Munchin
+    req.body.name, false
   ], function() {
     res.redirect("/");
   });
@@ -32,7 +32,7 @@ router.put("/:id", function(req, res) {
   console.log("condition", condition);
 
   burger.update({
-    Munchin: req.body.Munchin
+    devoured: req.body.devoured
   }, condition, function() {
     res.redirect("/");
   });
