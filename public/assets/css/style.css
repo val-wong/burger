@@ -11,9 +11,13 @@ li {
 .create-update-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
+  background: pink;
 }
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.jumbotron {
+
 }
